@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arian Kapllanaj — AI, software and full-stack engineer building intelligent systems and memorable digital experiences.">
+  <meta name="theme-color" content="#07090d">
+  <title>Arian Kapllanaj — Engineer & Digital Builder</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="is-locked">
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor cursor--dot" aria-hidden="true"></div>
+  <div class="cursor cursor--ring" aria-hidden="true"><span>View</span></div>
+  <div class="click-flash" aria-hidden="true"></div>
+
+  <div class="experience-gate" id="experienceGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+    <div class="gate-shutter gate-shutter--top" aria-hidden="true"></div>
+    <div class="gate-shutter gate-shutter--bottom" aria-hidden="true"></div>
+    <div class="gate-grid" aria-hidden="true"></div>
+    <div class="gate-orbit gate-orbit--one" aria-hidden="true"></div>
+    <div class="gate-orbit gate-orbit--two" aria-hidden="true"></div>
+
+    <div class="gate-top micro-copy">
+      <span>AK / DIGITAL SYSTEM</span>
+      <span class="gate-clock" id="gateClock">00:00:00</span>
+    </div>
+
+    <div class="gate-center">
+      <p class="eyebrow gate-eyebrow"><span></span> Personal interface / 2026</p>
+      <h1 id="gateTitle">Enter Arian's<br><em>digital space.</em></h1>
+      <button class="enter-button magnetic" id="enterButton" type="button">
+        <span class="enter-button__rings" aria-hidden="true"></span>
+        <span class="enter-button__label">
+          <small>Click to</small>
+          Initialize
+        </span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 12h13M13 6l6 6-6 6"/>
+        </svg>
+      </button>
+      <div class="boot-status" id="bootStatus" aria-live="polite">
+        <span>System awaiting input</span>
+        <div class="boot-track"><i></i></div>
+      </div>
+    </div>
+
+    <div class="gate-bottom micro-copy">
+      <span>Tirana / Albania</span>
+      <span>Scroll • Move • Explore</span>
+    </div>
+
+    <div class="launch-sequence" aria-hidden="true">
+      <span class="launch-sequence__line"></span>
+      <strong>AK</strong>
+      <small>System online</small>
+    </div>
+  </div>
+
+  <div class="webgl-shell" aria-hidden="true">
+    <canvas id="webglCanvas"></canvas>
+    <div class="webgl-vignette"></div>
+  </div>
+
+  <div class="site-shell" id="siteShell" aria-hidden="true">
+    <header class="site-header" id="siteHeader">
+      <a class="brand magnetic" href="#home" aria-label="Arian Kapllanaj, home">
+        <span class="brand-mark">AK</span>
+        <span class="brand-copy">Arian<br>Kapllanaj</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#profile" data-nav="profile"><span>01</span> Profile</a>
+        <a href="#work" data-nav="work"><span>02</span> Work</a>
+        <a href="#stack" data-nav="stack"><span>03</span> Stack</a>
+        <a href="#contact" data-nav="contact"><span>04</span> Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="availability" href="#contact">
+          <i></i>
+          <span>Available for ideas</span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu__inner">
+        <p class="micro-copy">Navigate /</p>
+        <nav aria-label="Mobile navigation">
+          <a href="#home"><span>00</span> Home</a>
+          <a href="#profile"><span>01</span> Profile</a>
+          <a href="#work"><span>02</span> Selected work</a>
+          <a href="#stack"><span>03</span> Capabilities</a>
+          <a href="#contact"><span>04</span> Contact</a>
+        </nav>
+        <div class="mobile-menu__meta">
+          <a href="mailto:arian27kapllanaj@gmail.com">Email</a>
+          <a href="https://github.com/Arian27Kapllanaj" target="_blank" rel="noreferrer">GitHub</a>
+          <span>Tirana, AL</span>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <section class="hero section-dark" id="home" data-scene="hero">
+        <div class="hero-coordinates micro-copy" aria-hidden="true">
+          <span>41.3275° N</span>
+          <span>19.8187° E</span>
+        </div>
+
+        <div class="hero-content page-width">
+          <div class="hero-copy">
+            <p class="eyebrow hero-eyebrow reveal" data-reveal="up">
+              <span></span> AI / Software / Digital experiences
+            </p>
+            <h1 class="hero-title" aria-label="Arian Kapllanaj">
+              <span class="title-line"><span>ARIAN</span></span>
+              <span class="title-line title-line--accent"><span>KAPLLANAJ</span></span>
+            </h1>
+            <div class="hero-statement reveal" data-reveal="up">
+              <p>I build <button class="word-switch" id="wordSwitch" type="button" aria-label="Change highlighted specialty"><span id="changingWord">intelligent systems</span><i></i></button><br>that feel alive.</p>
+            </div>
+            <p class="hero-description reveal" data-reveal="up">
+              Engineer by profession. Builder by instinct. I turn ambitious ideas into useful, fast and memorable digital products.
+            </p>
+            <div class="hero-cta reveal" data-reveal="up">
+              <a class="button button--solid magnetic" href="#work">
+                <span>Explore selected work</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              </a>
+              <a class="text-link magnetic" href="#profile">
+                <span>More about me</span>
+                <i></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-hud reveal" data-reveal="scale" data-speed="-0.06">
+            <div class="hud-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <p class="micro-copy">Live object / Core 01</p>
+            <div class="hud-spacer"></div>
+            <div class="hud-readout">
+              <span>Move your pointer</span>
+              <strong>INTERACTIVE</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span>Scroll to explore</span>
+          <i></i>
+        </div>
+      </section>
+
+      <section class="profile section-light" id="profile" data-scene="profile">
+        <div class="section-grid page-width">
+          <div class="section-index reveal" data-reveal="up">
+            <span>01 / Profile</span>
+            <i></i>
+          </div>
+
+          <div class="profile-intro">
+            <p class="kicker reveal" data-reveal="up">The person behind the interface</p>
+            <h2 class="display-heading reveal" data-reveal="lines">I don't just write code.<br>I design <em>momentum.</em></h2>
+            <div class="profile-body">
+              <p class="lead reveal" data-reveal="up">
+                I'm Arian, a Computer Science graduate and engineer based in Tirana. My world sits at the intersection of software, AI, infrastructure and expressive web design.
+              </p>
+              <p class="reveal" data-reveal="up">
+                From enterprise systems and DevOps pipelines to local AI assistants and animated digital experiences, I care about the whole journey: the idea, the system behind it, and the feeling it creates for the person using it.
+              </p>
+            </div>
+          </div>
+
+          <div class="profile-orbit reveal" data-reveal="scale" aria-hidden="true">
+            <div class="orbit-copy">
+              <span>Think</span><i></i><span>Build</span><i></i><span>Refine</span>
+            </div>
+            <div class="orbit-center">AK</div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat reveal" data-reveal="up">
+              <strong><span data-count="4">0</span><sup>+</sup></strong>
+              <p>Years across development<br>and engineering</p>
+            </article>
+            <article class="stat reveal" data-reveal="up">
+              <strong><span data-count="3">0</span></strong>
+              <p>Core worlds<br>Software / AI / Web</p>
+            </article>
+            <article class="stat reveal" data-reveal="up">
+              <strong><span data-count="100">0</span><sup>%</sup></strong>
+              <p>Curiosity<br>built into the process</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="work section-dark" id="work" data-scene="work">
+        <div class="page-width">
+          <div class="section-index section-index--light reveal" data-reveal="up">
+            <span>02 / Selected work</span>
+            <i></i>
+          </div>
+
+          <div class="section-heading-row">
+            <h2 class="display-heading reveal" data-reveal="lines">Things I've brought<br><em>to life.</em></h2>
+            <p class="reveal" data-reveal="up">A selection of systems, platforms and experiences shaped by code, curiosity and a refusal to leave good ideas unfinished.</p>
+          </div>
+
+          <div class="project-grid">
+            <button class="project-card project-card--wide reveal" data-reveal="up" type="button"
+              data-project="jarvis" data-cursor="view">
+              <span class="project-card__number">01</span>
+              <div class="project-visual project-visual--jarvis" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="jarvis-core"><i></i><i></i><i></i><strong>J</strong></div>
+                <span class="visual-label visual-label--one">Voice online</span>
+                <span class="visual-label visual-label--two">Local intelligence</span>
+                <span class="visual-label visual-label--three">MCP connected</span>
+              </div>
+              <div class="project-card__meta">
+                <div><h3>Jarvis Assistant</h3><p>Local AI / Voice / Automation</p></div>
+                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </div>
+            </button>
+
+            <button class="project-card reveal" data-reveal="up" type="button"
+              data-project="cod" data-cursor="view">
+              <span class="project-card__number">02</span>
+              <div class="project-visual project-visual--cod" aria-hidden="true">
+                <div class="scan-line"></div>
+                <div class="map-shape">
+                  <svg viewBox="0 0 260 320"><path d="M129 8 176 30l-6 43 40 31-13 39 35 45-21 27 8 42-42 11-19 43-47-17-40 17-27-39-41-9 10-51-23-35 26-37-17-34 34-28 1-45 44-13Z"/></svg>
+                  <i style="--x:35%;--y:24%"></i><i style="--x:61%;--y:45%"></i><i style="--x:42%;--y:70%"></i>
+                </div>
+                <strong class="cod-wordmark">COD<span>.AL</span></strong>
+              </div>
+              <div class="project-card__meta">
+                <div><h3>Call of Duty Albania</h3><p>Community / Editorial / Gaming</p></div>
+                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </div>
+            </button>
+
+            <button class="project-card reveal" data-reveal="up" type="button"
+              data-project="luxe" data-cursor="view">
+              <span class="project-card__number">03</span>
+              <div class="project-visual project-visual--luxe" aria-hidden="true">
+                <span class="luxe-script">Luxe</span>
+                <div class="luxe-circle"></div>
+                <p>Beauty tailored<br>to perfection</p>
+              </div>
+              <div class="project-card__meta">
+                <div><h3>Luxe Beauty</h3><p>Brand / Web / Booking</p></div>
+                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </div>
+            </button>
+
+            <button class="project-card project-card--wide reveal" data-reveal="up" type="button"
+              data-project="arix" data-cursor="view">
+              <span class="project-card__number">04</span>
+              <div class="project-visual project-visual--arix" aria-hidden="true">
+                <div class="console-lines"></div>
+                <strong>ARIX</strong>
+                <span>Collection</span>
+                <div class="controller-symbols"><i>△</i><i>○</i><i>×</i><i>□</i></div>
+              </div>
+              <div class="project-card__meta">
+                <div><h3>Arix Collection</h3><p>Interactive archive / Gaming culture</p></div>
+                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span>AI SYSTEMS</span><i>✦</i><span>SOFTWARE ENGINEERING</span><i>✦</i><span>WEB EXPERIENCES</span><i>✦</i><span>AUTOMATION</span><i>✦</i>
+          <span>AI SYSTEMS</span><i>✦</i><span>SOFTWARE ENGINEERING</span><i>✦</i><span>WEB EXPERIENCES</span><i>✦</i><span>AUTOMATION</span><i>✦</i>
+        </div>
+      </div>
+
+      <section class="stack section-light" id="stack" data-scene="stack">
+        <div class="page-width">
+          <div class="section-index reveal" data-reveal="up">
+            <span>03 / Capabilities</span>
+            <i></i>
+          </div>
+
+          <div class="section-heading-row section-heading-row--dark">
+            <h2 class="display-heading reveal" data-reveal="lines">One builder.<br><em>Multiple layers.</em></h2>
+            <p class="reveal" data-reveal="up">I can move from concept and interface to backend logic, deployment and the intelligent layer that connects everything.</p>
+          </div>
+
+          <div class="capability-list">
+            <article class="capability reveal" data-reveal="up">
+              <span class="capability__number">01</span>
+              <h3>AI systems<br>& agents</h3>
+              <p>Local LLMs, intelligent assistants, voice interfaces, MCP integrations and multi-platform automation.</p>
+              <div class="capability__tags"><span>Python</span><span>Ollama</span><span>MCP</span><span>APIs</span></div>
+              <i class="capability__line"></i>
+            </article>
+            <article class="capability reveal" data-reveal="up">
+              <span class="capability__number">02</span>
+              <h3>Full-stack<br>development</h3>
+              <p>Responsive digital products with thoughtful interfaces, reliable logic and clean, maintainable foundations.</p>
+              <div class="capability__tags"><span>HTML/CSS</span><span>JavaScript</span><span>PHP</span><span>Laravel</span></div>
+              <i class="capability__line"></i>
+            </article>
+            <article class="capability reveal" data-reveal="up">
+              <span class="capability__number">03</span>
+              <h3>Software<br>& platform</h3>
+              <p>Enterprise software, APIs, observability, containers and delivery pipelines engineered for real-world use.</p>
+              <div class="capability__tags"><span>Java</span><span>Spring Boot</span><span>Docker</span><span>Azure</span></div>
+              <i class="capability__line"></i>
+            </article>
+            <article class="capability reveal" data-reveal="up">
+              <span class="capability__number">04</span>
+              <h3>Creative<br>technology</h3>
+              <p>Motion, interaction and 3D experiences that give technically strong products a distinct personality.</p>
+              <div class="capability__tags"><span>Three.js</span><span>Motion</span><span>UX</span><span>Prototyping</span></div>
+              <i class="capability__line"></i>
+            </article>
+          </div>
+
+          <div class="experience-block">
+            <p class="kicker reveal" data-reveal="up">Selected experience</p>
+            <div class="experience-row reveal" data-reveal="up">
+              <span>Vodafone Albania</span>
+              <strong>Software / DevOps / Pega Engineering</strong>
+              <small>Enterprise systems</small>
+            </div>
+            <div class="experience-row reveal" data-reveal="up">
+              <span>Independent</span>
+              <strong>Full-stack Web Development</strong>
+              <small>Client products</small>
+            </div>
+            <div class="experience-row reveal" data-reveal="up">
+              <span>Personal R&D</span>
+              <strong>AI Agents & Automation</strong>
+              <small>Future systems</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-dark" id="contact" data-scene="contact">
+        <div class="contact-radial" aria-hidden="true"></div>
+        <div class="page-width contact-inner">
+          <div class="section-index section-index--light reveal" data-reveal="up">
+            <span>04 / Contact</span>
+            <i></i>
+          </div>
+          <p class="kicker reveal" data-reveal="up">Have an idea worth building?</p>
+          <h2 class="contact-title reveal" data-reveal="lines">LET'S MAKE<br><em>IT REAL.</em></h2>
+          <a class="contact-orb magnetic reveal" data-reveal="scale" href="mailto:arian27kapllanaj@gmail.com">
+            <span>Start a conversation</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <div class="contact-meta reveal" data-reveal="up">
+            <a href="mailto:arian27kapllanaj@gmail.com">arian27kapllanaj@gmail.com</a>
+            <a href="https://github.com/Arian27Kapllanaj" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <span>Tirana, Albania / Remote</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Arian Kapllanaj</span>
+      <span>Engineered with curiosity</span>
+      <a href="#home">Back to top ↑</a>
+    </footer>
+  </div>
+
+  <dialog class="project-modal" id="projectModal">
+    <button class="modal-close magnetic" id="modalClose" type="button" aria-label="Close project details">
+      <span></span><span></span>
+    </button>
+    <div class="project-modal__index micro-copy" id="modalIndex">Project / 01</div>
+    <div class="project-modal__content">
+      <p class="eyebrow"><span></span><b id="modalType">AI / Voice / Automation</b></p>
+      <h2 id="modalTitle">Jarvis Assistant</h2>
+      <p class="project-modal__lead" id="modalLead"></p>
+      <div class="project-modal__facts" id="modalFacts"></div>
+    </div>
+    <div class="project-modal__graphic" id="modalGraphic" aria-hidden="true"><i></i><i></i><strong>AK</strong></div>
+  </dialog>
+
+  <script defer src="js/app.bundle.js"></script>
+</body>
+</html>
