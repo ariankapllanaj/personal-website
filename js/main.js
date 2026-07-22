@@ -9,6 +9,27 @@ const siteHeader = document.querySelector("#siteHeader");
 const menuToggle = document.querySelector("#menuToggle");
 const mobileMenu = document.querySelector("#mobileMenu");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const INTRO_STARTED_KEY = "akPortfolioStarted";
+const SKIP_INTRO_ONCE_KEY = "akSkipIntroOnce";
+const WINDOW_RETURNING_VALUE = "akPortfolio:returning";
+const WINDOW_SKIP_VALUE = "akPortfolio:skip-intro-once";
+
+function readSessionFlag(key) {
+  try {
+    return window.sessionStorage.getItem(key) === "true";
+  } catch {
+    return false;
+  }
+}
+
+function setSessionFlag(key, value) {
+  try {
+    if (value) window.sessionStorage.setItem(key, "true");
+    else window.sessionStorage.removeItem(key);
+  } catch {
+    /* The experience still works when storage is unavailable. */
+  }
+}
 
 const projectData = {
   jarvis: {
@@ -65,6 +86,7 @@ updateClock();
 setInterval(updateClock, 1000);
 
 function finishEntry() {
+  setSessionFlag(INTRO_STARTED_KEY, true);
   gate.classList.add("is-complete");
   body.classList.add("site-ready");
   siteShell.setAttribute("aria-hidden", "false");
@@ -101,6 +123,45 @@ function initializeExperience() {
 }
 
 enterButton.addEventListener("click", initializeExperience);
+
+function skipEntryAfterReturn() {
+  setSessionFlag(SKIP_INTRO_ONCE_KEY, false);
+  if (window.name === WINDOW_SKIP_VALUE) window.name = "";
+  setSessionFlag(INTRO_STARTED_KEY, true);
+  enterButton.disabled = true;
+  startScene();
+  gate.classList.add("is-complete");
+  gate.setAttribute("aria-hidden", "true");
+  siteShell.setAttribute("aria-hidden", "false");
+  body.classList.add("site-ready");
+  body.classList.remove("is-locked");
+}
+
+if (readSessionFlag(SKIP_INTRO_ONCE_KEY) || window.name === WINDOW_SKIP_VALUE) {
+  skipEntryAfterReturn();
+}
+
+window.addEventListener("pageshow", () => {
+  if (body.classList.contains("site-ready") && (readSessionFlag(SKIP_INTRO_ONCE_KEY) || window.name.startsWith("akPortfolio:"))) {
+    setSessionFlag(SKIP_INTRO_ONCE_KEY, false);
+    window.name = "";
+  }
+});
+
+/* Cinematic route into the contact experience */
+const routeTransition = document.querySelector("#routeTransition");
+document.querySelectorAll(".contact-page-link").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    setSessionFlag(SKIP_INTRO_ONCE_KEY, true);
+    window.name = WINDOW_RETURNING_VALUE;
+    routeTransition.style.setProperty("--route-x", `${event.clientX || window.innerWidth / 2}px`);
+    routeTransition.style.setProperty("--route-y", `${event.clientY || window.innerHeight / 2}px`);
+    routeTransition.classList.add("is-active");
+    window.setTimeout(() => { window.location.href = link.getAttribute("href"); }, reduceMotion ? 0 : 820);
+  });
+});
 
 /* Mobile menu */
 function setMenu(open) {

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Start a conversation with Arian Kapllanaj about AI systems, software engineering, automation or an ambitious digital product.">
+  <meta name="theme-color" content="#07090d">
+  <title>Contact — Arian Kapllanaj</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body class="contact-page is-loading">
+  <div class="cursor cursor--dot" aria-hidden="true"></div>
+  <div class="cursor cursor--ring" aria-hidden="true"><span>Open</span></div>
+
+  <div class="contact-loader" id="contactLoader" aria-hidden="true">
+    <span class="contact-loader__index">04</span>
+    <strong>CONTACT</strong>
+    <i></i>
+  </div>
+
+  <div class="contact-route" id="contactRoute" aria-hidden="true">
+    <span>Returning to</span>
+    <strong>AK / HOME</strong>
+  </div>
+
+  <canvas id="contactCanvas" aria-hidden="true"></canvas>
+  <div class="contact-backdrop" aria-hidden="true"></div>
+
+  <header class="site-header contact-header" id="siteHeader">
+    <a class="brand magnetic route-home" href="index.html" aria-label="Arian Kapllanaj, return home">
+      <span class="brand-mark">AK</span>
+      <span class="brand-copy">Arian<br>Kapllanaj</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a class="route-home" href="index.html"><span>00</span> Home</a>
+      <a href="index.html#profile"><span>01</span> Profile</a>
+      <a href="index.html#work"><span>02</span> Work</a>
+      <a class="is-active" href="#contactForm"><span>04</span> Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="availability" aria-label="Currently available for selected projects">
+        <i></i>
+        <span>Signal is open</span>
+      </div>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__inner">
+      <p class="micro-copy">Navigate /</p>
+      <nav aria-label="Mobile navigation">
+        <a class="route-home" href="index.html"><span>00</span> Home</a>
+        <a href="index.html#profile"><span>01</span> Profile</a>
+        <a href="index.html#work"><span>02</span> Selected work</a>
+        <a href="#contactForm"><span>04</span> Contact</a>
+      </nav>
+      <div class="mobile-menu__meta">
+        <a href="mailto:arian27kapllanaj@gmail.com">Email</a>
+        <a href="https://github.com/Arian27Kapllanaj" target="_blank" rel="noreferrer">GitHub</a>
+        <span>Tirana, AL</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="contact-experience">
+    <section class="contact-layout page-width" aria-labelledby="contactTitle">
+      <div class="contact-intro">
+        <div class="contact-index reveal-contact">
+          <span>04 / Contact</span>
+          <i></i>
+        </div>
+
+        <p class="eyebrow reveal-contact"><span></span> New ideas start here</p>
+        <h1 id="contactTitle" class="reveal-contact">
+          LET'S BUILD<br>
+          <em>SOMETHING.</em>
+        </h1>
+        <p class="contact-intro__copy reveal-contact">
+          Have a product, system or unusual idea in mind? Tell me where you want to go. We can work out the technology together.
+        </p>
+
+        <div class="signal-readout reveal-contact" aria-hidden="true">
+          <div class="signal-readout__top">
+            <span>Communication field</span>
+            <strong id="signalState">Listening</strong>
+          </div>
+          <div class="signal-bars">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+
+        <div class="contact-direct reveal-contact">
+          <p>Prefer a direct signal?</p>
+          <a href="mailto:arian27kapllanaj@gmail.com">arian27kapllanaj@gmail.com</a>
+          <span>Tirana, Albania / Available remotely</span>
+        </div>
+      </div>
+
+      <div class="form-panel reveal-contact">
+        <div class="form-panel__top">
+          <div>
+            <p class="micro-copy">Project transmission</p>
+            <h2>Start a conversation.</h2>
+          </div>
+          <div class="form-progress" aria-label="Form completion">
+            <strong id="formProgress">00</strong><span>%</span>
+          </div>
+        </div>
+
+        <form id="contactForm" action="https://formspree.io/f/meeylojl" method="post" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <input id="name" name="name" type="text" autocomplete="name" placeholder=" " required>
+              <label for="name">Your name <span>*</span></label>
+              <i></i>
+              <small>Please enter your name.</small>
+            </div>
+
+            <div class="field">
+              <input id="email" name="email" type="email" autocomplete="email" placeholder=" " required>
+              <label for="email">Email address <span>*</span></label>
+              <i></i>
+              <small>Please enter a valid email.</small>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <input id="company" name="company" type="text" autocomplete="organization" placeholder=" ">
+              <label for="company">Company / Brand</label>
+              <i></i>
+            </div>
+
+            <div class="field field--select">
+              <select id="projectType" name="project_type" required>
+                <option value="" selected disabled></option>
+                <option value="AI system or agent">AI system or agent</option>
+                <option value="Website or digital product">Website or digital product</option>
+                <option value="Software engineering">Software engineering</option>
+                <option value="Automation or integration">Automation or integration</option>
+                <option value="Something different">Something different</option>
+              </select>
+              <label for="projectType">Project type <span>*</span></label>
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
+              <i></i>
+              <small>Please select a project type.</small>
+            </div>
+          </div>
+
+          <div class="field field--select">
+            <select id="budget" name="budget">
+              <option value="" selected></option>
+              <option value="Under €1,000">Under €1,000</option>
+              <option value="€1,000–€3,000">€1,000–€3,000</option>
+              <option value="€3,000–€7,500">€3,000–€7,500</option>
+              <option value="€7,500+">€7,500+</option>
+              <option value="To be discussed">To be discussed</option>
+            </select>
+            <label for="budget">Approximate budget</label>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg>
+            <i></i>
+          </div>
+
+          <div class="field field--message">
+            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Tell me about your idea <span>*</span></label>
+            <i></i>
+            <small>Please add a short project description.</small>
+            <span class="character-count"><b id="characterCount">0</b> / 1200</span>
+          </div>
+
+          <div class="field field--honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="consent" required>
+            <span class="consent-box"><i></i></span>
+            <span>I agree that my information can be used to respond to this enquiry.</span>
+          </label>
+
+          <button class="send-button magnetic" type="submit">
+            <span class="send-button__default">Transmit message</span>
+            <span class="send-button__sending">Establishing connection</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+            <i class="send-button__progress"></i>
+          </button>
+
+          <p class="form-note">Fields marked with * are required. Typical response time: 1–2 working days.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact-footer page-width">
+    <a class="route-home" href="index.html">← Back to homepage</a>
+    <span>© 2026 Arian Kapllanaj</span>
+    <a href="https://github.com/Arian27Kapllanaj" target="_blank" rel="noreferrer">GitHub ↗</a>
+  </footer>
+
+  <div class="success-state" id="successState" role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-hidden="true">
+    <div class="success-state__orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="micro-copy">Transmission complete / 200</p>
+    <h2 id="successTitle">MESSAGE<br><em>RECEIVED.</em></h2>
+    <p>Thank you. Your signal reached me successfully.<br>I'll get back to you shortly.</p>
+    <a class="button button--solid route-home" href="index.html">
+      <span>Return home</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <script type="module" src="js/contact.js"></script>
+</body>
+</html>

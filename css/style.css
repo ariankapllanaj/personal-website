@@ -120,6 +120,41 @@ svg {
   animation: clickFlash .75s var(--ease-out);
 }
 
+.route-transition {
+  position: fixed;
+  z-index: 15000;
+  inset: 0;
+  display: grid;
+  visibility: hidden;
+  align-content: center;
+  justify-items: center;
+  color: var(--ink);
+  background: var(--acid);
+  clip-path: circle(0 at var(--route-x, 50%) var(--route-y, 50%));
+  transition: clip-path .85s var(--ease-smooth), visibility .85s;
+}
+
+.route-transition span {
+  margin-bottom: 8px;
+  font-family: "Space Grotesk Local", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.route-transition strong {
+  font-family: "Space Grotesk Local", sans-serif;
+  font-size: clamp(50px, 9vw, 140px);
+  font-weight: 520;
+  letter-spacing: -.075em;
+}
+
+.route-transition.is-active {
+  visibility: visible;
+  clip-path: circle(150% at var(--route-x, 50%) var(--route-y, 50%));
+}
+
 @keyframes clickFlash {
   0% { opacity: .85; transform: translate(-50%, -50%) scale(.2); }
   100% { opacity: 0; transform: translate(-50%, -50%) scale(8); }

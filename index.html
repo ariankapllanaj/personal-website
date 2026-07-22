@@ -15,6 +15,10 @@
   <div class="cursor cursor--dot" aria-hidden="true"></div>
   <div class="cursor cursor--ring" aria-hidden="true"><span>View</span></div>
   <div class="click-flash" aria-hidden="true"></div>
+  <div class="route-transition" id="routeTransition" aria-hidden="true">
+    <span>Opening channel</span>
+    <strong>CONTACT / 04</strong>
+  </div>
 
   <div class="experience-gate" id="experienceGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
     <div class="gate-shutter gate-shutter--top" aria-hidden="true"></div>
@@ -75,11 +79,11 @@
         <a href="#profile" data-nav="profile"><span>01</span> Profile</a>
         <a href="#work" data-nav="work"><span>02</span> Work</a>
         <a href="#stack" data-nav="stack"><span>03</span> Stack</a>
-        <a href="#contact" data-nav="contact"><span>04</span> Contact</a>
+        <a class="contact-page-link" href="contact.html" data-nav="contact"><span>04</span> Contact</a>
       </nav>
 
       <div class="header-actions">
-        <a class="availability" href="#contact">
+        <a class="availability contact-page-link" href="contact.html">
           <i></i>
           <span>Available for ideas</span>
         </a>
@@ -97,7 +101,7 @@
           <a href="#profile"><span>01</span> Profile</a>
           <a href="#work"><span>02</span> Selected work</a>
           <a href="#stack"><span>03</span> Capabilities</a>
-          <a href="#contact"><span>04</span> Contact</a>
+          <a class="contact-page-link" href="contact.html"><span>04</span> Contact</a>
         </nav>
         <div class="mobile-menu__meta">
           <a href="mailto:arian27kapllanaj@gmail.com">Email</a>
@@ -360,7 +364,7 @@
           </div>
           <p class="kicker reveal" data-reveal="up">Have an idea worth building?</p>
           <h2 class="contact-title reveal" data-reveal="lines">LET'S MAKE<br><em>IT REAL.</em></h2>
-          <a class="contact-orb magnetic reveal" data-reveal="scale" href="mailto:arian27kapllanaj@gmail.com">
+          <a class="contact-orb magnetic reveal contact-page-link" data-reveal="scale" href="contact.html">
             <span>Start a conversation</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
           </a>
