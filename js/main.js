@@ -367,7 +367,15 @@ function closeProject() {
 }
 
 document.querySelectorAll(".project-card").forEach((card) => {
-  card.addEventListener("click", () => openProject(card.dataset.project));
+  card.addEventListener("click", () => {
+    const externalUrl = card.dataset.url;
+    if (externalUrl) {
+      window.open(externalUrl, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    openProject(card.dataset.project);
+  });
 
   if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
     card.addEventListener("pointermove", (event) => {
