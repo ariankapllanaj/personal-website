@@ -1,19 +1,6 @@
-# Arian Kapllanaj — Personal Portfolio Concept
+# Arian Kapllanaj — Personal Portfolio
 
 A cinematic, responsive one-page portfolio built with HTML, CSS, JavaScript and Three.js.
-
-## Preview locally
-
-You can now open `index.html` directly by double-clicking it. The JavaScript and Three.js code are bundled locally, so the Initialize button works without a server.
-
-You can also serve the folder through a small local server:
-
-```bash
-cd arian-portfolio
-python3 -m http.server 8080
-```
-
-Then visit `http://localhost:8080`.
 
 ## Files
 
@@ -28,5 +15,3 @@ Then visit `http://localhost:8080`.
 - `js/vendor/three.module.min.js` — local Three.js dependency
 
 No external images, fonts or CDN requests are required.
-
-The contact form is prepared to submit to `send-email.php`. Add that server-side handler when deploying to PHP hosting; a successful handler can redirect to `contact.html?sent=1` to display the built-in success animation.
