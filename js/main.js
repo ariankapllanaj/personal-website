@@ -368,6 +368,8 @@ function closeProject() {
 
 document.querySelectorAll(".project-card").forEach((card) => {
   card.addEventListener("click", () => {
+    if (card.matches("a[href]")) return;
+
     const externalUrl = card.dataset.url;
     if (externalUrl) {
       window.open(externalUrl, "_blank", "noopener,noreferrer");
