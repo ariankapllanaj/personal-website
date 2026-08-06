@@ -150,12 +150,18 @@ window.addEventListener("pageshow", () => {
 
 /* Cinematic route into the contact experience */
 const routeTransition = document.querySelector("#routeTransition");
-document.querySelectorAll(".contact-page-link").forEach((link) => {
+const routeTransitionLabel = document.querySelector("#routeTransitionLabel");
+const routeTransitionCode = document.querySelector("#routeTransitionCode");
+
+document.querySelectorAll(".contact-page-link, .project-page-link").forEach((link) => {
   link.addEventListener("click", (event) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     setSessionFlag(SKIP_INTRO_ONCE_KEY, true);
     window.name = WINDOW_RETURNING_VALUE;
+    const isProjectRoute = link.classList.contains("project-page-link");
+    routeTransitionLabel.textContent = isProjectRoute ? "Loading case study" : "Opening channel";
+    routeTransitionCode.textContent = link.dataset.routeCode || (isProjectRoute ? "SELECTED WORK" : "CONTACT / 04");
     routeTransition.style.setProperty("--route-x", `${event.clientX || window.innerWidth / 2}px`);
     routeTransition.style.setProperty("--route-y", `${event.clientY || window.innerHeight / 2}px`);
     routeTransition.classList.add("is-active");

@@ -18,8 +18,8 @@
   <div class="cursor cursor--ring" aria-hidden="true"><span>View</span></div>
   <div class="click-flash" aria-hidden="true"></div>
   <div class="route-transition" id="routeTransition" aria-hidden="true">
-    <span>Opening channel</span>
-    <strong>CONTACT / 04</strong>
+    <span id="routeTransitionLabel">Opening channel</span>
+    <strong id="routeTransitionCode">CONTACT / 04</strong>
   </div>
 
   <div class="experience-gate" id="experienceGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
@@ -278,9 +278,7 @@
               </div>
             </button> -->
 
-            <a class="project-card reveal" data-reveal="up"
-              href="https://ariankapllanaj.github.io/AMG-GT-Black-Series-Experience/" target="_blank"
-              rel="noopener noreferrer" data-cursor="view">
+            <article class="project-card reveal" data-reveal="up" data-cursor="view">
               <span class="project-card__number">01</span>
               <div class="project-visual project-visual--luxe project-visual--external project-visual--luxe-studio"
                 aria-hidden="true">
@@ -293,15 +291,18 @@
                   <h3>AMG-GT-Black-Series-Experience</h3>
                   <p>Website / ThreeJS</p>
                 </div>
-                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg></span>
               </div>
-            </a>
+              <div class="project-card__actions">
+                <a class="project-action project-action--live magnetic"
+                  href="https://ariankapllanaj.github.io/AMG-GT-Black-Series-Experience/" target="_blank"
+                  rel="noopener noreferrer"><span>Live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <a class="project-action project-action--details project-page-link magnetic"
+                  href="project.html?project=amg-black-series" data-route-code="PROJECT / 01"><span>View project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+              </div>
+            </article>
 
-            <a class="project-card reveal" data-reveal="up" href="https://luxebeautystudio.ch" target="_blank"
-              rel="noopener noreferrer" data-cursor="view">
-              <span class="project-card__number">03</span>
+            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+              <span class="project-card__number">02</span>
               <div class="project-visual project-visual--luxe project-visual--external project-visual--luxe-studio"
                 aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/luxe-beauty-studio.png"
@@ -313,11 +314,14 @@
                   <h3>Luxe Beauty Studio</h3>
                   <p>Website</p>
                 </div>
-                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg></span>
               </div>
-            </a>
+              <div class="project-card__actions">
+                <a class="project-action project-action--live magnetic" href="https://luxebeautystudio.ch"
+                  target="_blank" rel="noopener noreferrer"><span>Live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <a class="project-action project-action--details project-page-link magnetic"
+                  href="project.html?project=luxe-beauty" data-route-code="PROJECT / 03"><span>View project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+              </div>
+            </article>
 
             <!-- <button class="project-card project-card--wide reveal" data-reveal="up" type="button" data-project="arix"
               data-cursor="view">
@@ -339,9 +343,8 @@
               </div>
             </button> -->
 
-            <a class="project-card reveal" data-reveal="up" href="https://hygenika.ch" target="_blank"
-              rel="noopener noreferrer" data-cursor="view">
-              <span class="project-card__number">05</span>
+            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+              <span class="project-card__number">03</span>
               <div class="project-visual project-visual--external project-visual--hygenika" aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/hygenika.png" alt="Hygenika.ch microsite preview">
                 <span>Hygenika</span>
@@ -351,15 +354,17 @@
                   <h3>Hygenika</h3>
                   <p>Website</p>
                 </div>
-                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg></span>
               </div>
-            </a>
+              <div class="project-card__actions">
+                <a class="project-action project-action--live magnetic" href="https://hygenika.ch" target="_blank"
+                  rel="noopener noreferrer"><span>Live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <a class="project-action project-action--details project-page-link magnetic"
+                  href="project.html?project=hygenika" data-route-code="PROJECT / 05"><span>View project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+              </div>
+            </article>
 
-            <a class="project-card reveal" data-reveal="up" href="https://ariankapllanaj.github.io/amdrix.ch/"
-              target="_blank" rel="noopener noreferrer" data-cursor="view">
-              <span class="project-card__number">07</span>
+            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+              <span class="project-card__number">04</span>
               <div class="project-visual project-visual--external project-visual--amdrix" aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/amdrix.png" alt="Amdrix microsite preview">
                 <span>AMDRIX</span>
@@ -369,15 +374,18 @@
                   <h3>AMDRIX</h3>
                   <p>Website</p>
                 </div>
-                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg></span>
               </div>
-            </a>
+              <div class="project-card__actions">
+                <a class="project-action project-action--live magnetic"
+                  href="https://ariankapllanaj.github.io/amdrix.ch/" target="_blank"
+                  rel="noopener noreferrer"><span>Live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <a class="project-action project-action--details project-page-link magnetic"
+                  href="project.html?project=amdrix" data-route-code="PROJECT / 07"><span>View project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+              </div>
+            </article>
 
-            <a class="project-card reveal" data-reveal="up" href="https://virtual-accountant.uk" target="_blank"
-              rel="noopener noreferrer" data-cursor="view">
-              <span class="project-card__number">08</span>
+            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+              <span class="project-card__number">05</span>
               <div class="project-visual project-visual--external project-visual--virtual-accountant"
                 aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/virtual-accountant.png"
@@ -389,16 +397,17 @@
                   <h3>Virtual Accountant UK</h3>
                   <p>Website</p>
                 </div>
-                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg></span>
               </div>
-            </a>
+              <div class="project-card__actions">
+                <a class="project-action project-action--live magnetic" href="https://virtual-accountant.uk"
+                  target="_blank" rel="noopener noreferrer"><span>Live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <a class="project-action project-action--details project-page-link magnetic"
+                  href="project.html?project=virtual-accountant" data-route-code="PROJECT / 08"><span>View project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+              </div>
+            </article>
 
-            <a class="project-card reveal" data-reveal="up"
-              href="https://ariankapllanaj.github.io/rolex-gmt-master2-2tone-gold-website/" target="_blank"
-              rel="noopener noreferrer" data-cursor="view">
-              <span class="project-card__number">09</span>
+            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+              <span class="project-card__number">06</span>
               <div class="project-visual project-visual--external project-visual--rolex" aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/rolex-gmt-master2.png"
                   alt="Rolex GMT Master II microsite preview">
@@ -409,15 +418,18 @@
                   <h3>Rolex GMT Master II</h3>
                   <p>Unofficial Website</p>
                 </div>
-                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg></span>
               </div>
-            </a>
+              <div class="project-card__actions">
+                <a class="project-action project-action--live magnetic"
+                  href="https://ariankapllanaj.github.io/rolex-gmt-master2-2tone-gold-website/" target="_blank"
+                  rel="noopener noreferrer"><span>Live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <a class="project-action project-action--details project-page-link magnetic"
+                  href="project.html?project=rolex-gmt-master-ii" data-route-code="PROJECT / 09"><span>View project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+              </div>
+            </article>
 
-            <a class="project-card reveal" data-reveal="up" href="https://www.cognitivecf.com" target="_blank"
-              rel="noopener noreferrer" data-cursor="view">
-              <span class="project-card__number">10</span>
+            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+              <span class="project-card__number">07</span>
               <div class="project-visual project-visual--external project-visual--cognitive" aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/ccf.png" alt="Cognitive Corporate Finance">
                 <span>CognitiveCF</span>
@@ -427,11 +439,14 @@
                   <h3>CognitiveCF</h3>
                   <p>Consulting / Website</p>
                 </div>
-                <span class="round-arrow"><svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M7 17 17 7M8 7h9v9" />
-                  </svg></span>
               </div>
-            </a>
+              <div class="project-card__actions">
+                <a class="project-action project-action--live magnetic" href="https://www.cognitivecf.com"
+                  target="_blank" rel="noopener noreferrer"><span>Live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+                <a class="project-action project-action--details project-page-link magnetic"
+                  href="project.html?project=cognitive-corporate-finance" data-route-code="PROJECT / 10"><span>View project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
