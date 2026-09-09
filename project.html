@@ -17,7 +17,7 @@
 
   <div class="route-transition" id="projectRoute" aria-hidden="true">
     <span id="projectRouteLabel">Returning to portfolio</span>
-    <strong id="projectRouteCode">SELECTED WORK / 02</strong>
+    <strong id="projectRouteCode">SELECTED WORK</strong>
   </div>
 
   <div class="project-loader" id="projectLoader" aria-hidden="true">
@@ -30,15 +30,15 @@
 
   <header class="site-header" id="projectHeader">
     <a class="brand magnetic internal-link" href="index.html#home" data-route-label="Returning home"
-      data-route-code="HOME / 00" aria-label="Arian Kapllanaj home">
+      data-route-code="HOME" aria-label="Arian Kapllanaj home">
       <span>AK</span><b>Arian<br>Kapllanaj</b>
     </a>
     <nav aria-label="Project navigation">
       <a class="internal-link" href="index.html#work" data-route-label="Returning to portfolio"
-        data-route-code="SELECTED WORK / 02">All projects</a>
+        data-route-code="SELECTED WORK">All projects</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a class="header-live" id="headerLiveLink" href="#" target="_blank" rel="noopener noreferrer">Live website ↗</a>
+    <a class="header-live" id="headerLiveLink" hidden>Live website ↗</a>
   </header>
 
   <main>
@@ -46,16 +46,16 @@
       <div class="hero-grid" aria-hidden="true"></div><div class="hero-orbit" aria-hidden="true"></div>
       <div class="page-width hero-layout">
         <div class="hero-copy">
-          <p class="eyebrow reveal"><i></i><b id="projectType">Selected work</b></p>
-          <span class="micro hero-index" id="projectIndex">PROJECT / 01</span>
+          <p class="eyebrow reveal"><b id="projectType">Selected work</b></p>
+
           <h1 class="reveal" id="projectTitle">Selected project</h1>
           <p class="hero-subtitle reveal" id="projectSubtitle"></p>
           <div class="hero-actions reveal">
-            <a class="button button--primary magnetic" id="heroLiveLink" href="#" target="_blank" rel="noopener noreferrer">
+            <a class="button button--primary magnetic" id="heroLiveLink" hidden>
               <span>Visit live website</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg>
             </a>
             <a class="button button--ghost magnetic internal-link" href="index.html#work"
-              data-route-label="Returning to portfolio" data-route-code="SELECTED WORK / 02">
+              data-route-label="Returning to portfolio" data-route-code="SELECTED WORK">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H6M11 7l-5 5 5 5" /></svg><span>Back to projects</span>
             </a>
           </div>
@@ -63,16 +63,21 @@
 
         <div class="hero-visual reveal" data-parallax="0.06">
           <div class="visual-frame">
-            <div class="visual-top micro"><span>Live capture / 2026</span><span><i></i> Project online</span></div>
-            <div class="visual-image"><img id="projectImage" src="assets/projects/amg-black-series-card-square.png" alt="Selected project preview"><i class="scan"></i><b id="projectVisualNumber">01</b></div>
+            <div class="visual-top micro"><span id="visualCaption">Project preview</span><span><i></i><span id="visualStatus">Selected work</span></span></div>
+            <div class="visual-image" id="projectImageFrame" hidden><img id="projectImage" alt="Selected project preview"><i class="scan"></i></div>
+            <div class="tool-summary" id="projectToolSummary" hidden>
+              <p class="tool-summary__label">System at a glance</p>
+              <ol class="tool-summary__flow" id="projectToolFlow"></ol>
+              <a class="tool-summary__link" href="#workflow">Explore the full workflow <span aria-hidden="true">↓</span></a>
+            </div>
           </div>
         </div>
 
-        <div class="project-facts reveal">
-          <div><span>Client</span><strong id="projectClient">—</strong></div>
-          <div><span>Role</span><strong id="projectRole">—</strong></div>
-          <div><span>Market</span><strong id="projectMarket">—</strong></div>
-          <div><span>Year / Status</span><strong><b id="projectYear">—</b> / <b id="projectStatus">—</b></strong></div>
+        <div class="project-facts reveal" id="projectFacts">
+          <div><span>Client</span><strong id="projectClient"></strong></div>
+          <div><span>Role</span><strong id="projectRole"></strong></div>
+          <div><span>Market</span><strong id="projectMarket"></strong></div>
+          <div><span>Year / Status</span><strong><b id="projectYear"></b> / <b id="projectStatus"></b></strong></div>
         </div>
       </div>
       <div class="scroll-cue" aria-hidden="true"><span>Scroll for the story</span><i></i></div>
@@ -80,38 +85,52 @@
 
     <section class="overview section-light">
       <div class="page-width overview-grid">
-        <div class="section-index reveal"><span>01 / Overview</span><i></i></div>
+        <div class="section-index reveal"><span>Overview</span></div>
         <div><p class="kicker reveal">Project overview</p><h2 class="display reveal" id="overviewTitle">Selected project overview</h2></div>
         <p class="overview-body reveal" id="overviewBody"></p>
       </div>
     </section>
 
+    <section class="workflow section-dark" id="workflow" aria-labelledby="workflowTitle" hidden>
+      <div class="page-width">
+        <div class="section-index section-index--light reveal"><span>System workflow</span></div>
+        <div class="workflow-heading reveal">
+          <h2 class="display" id="workflowTitle">How it works.</h2>
+          <p id="workflowIntro"></p>
+        </div>
+        <figure class="workflow-diagram">
+          <ol class="workflow-stages" id="workflowStages"></ol>
+          <figcaption class="workflow-note reveal" id="workflowNote"></figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="story section-dark">
       <div class="page-width">
-        <div class="section-index section-index--light reveal"><span>02 / Process</span><i></i></div>
+        <div class="section-index section-index--light reveal"><span id="processIndex">Process</span></div>
         <div class="story-grid">
-          <article class="story-card reveal"><b>A</b><p class="kicker" id="challengeTitle">The challenge</p><h2>Finding the essential problem.</h2><p id="challengeBody"></p></article>
-          <article class="story-card reveal"><b>B</b><p class="kicker" id="solutionTitle">The approach</p><h2>Designing the right response.</h2><p id="solutionBody"></p></article>
+          <article class="story-card reveal"><b>A</b><p class="kicker" id="challengeTitle">The challenge</p><h2 id="challengeHeading">Finding the essential problem.</h2><p id="challengeBody"></p></article>
+          <article class="story-card reveal"><b>B</b><p class="kicker" id="solutionTitle">The approach</p><h2 id="solutionHeading">Designing the right response.</h2><p id="solutionBody"></p></article>
         </div>
       </div>
     </section>
 
     <section class="features section-light">
       <div class="page-width">
-        <div class="section-index reveal"><span>03 / Highlights</span><i></i></div>
+        <div class="section-index reveal"><span id="highlightsIndex">Highlights</span></div>
         <div class="features-heading"><p class="kicker reveal">What shapes the experience</p><h2 class="display reveal">Details that make<br><em>the difference.</em></h2></div>
         <div class="feature-list" id="projectFeatures"></div>
       </div>
     </section>
 
     <section class="project-stack section-dark">
-      <div class="page-width stack-inner"><p class="kicker reveal">Technology and tools</p><div class="stack-list reveal" id="projectStack"></div></div>
+      <div class="page-width stack-inner"><p class="kicker reveal" id="stackLabel">Technology and tools</p><div class="stack-list reveal" id="projectStack"></div></div>
     </section>
 
     <section class="next-project section-dark">
       <div class="next-orbit" aria-hidden="true"></div>
       <div class="page-width next-inner">
-        <p class="eyebrow reveal"><i></i>Continue exploring</p>
+        <p class="eyebrow reveal">Continue exploring</p>
         <a class="next-link reveal internal-link" id="nextProjectLink" href="#" data-route-label="Loading next case study">
           <strong id="nextProjectTitle">Next project</strong>
           <i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></i>

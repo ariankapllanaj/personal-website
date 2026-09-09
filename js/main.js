@@ -33,7 +33,6 @@ function setSessionFlag(key, value) {
 
 const projectData = {
   jarvis: {
-    index: "Project / 01",
     type: "AI / Voice / Automation",
     title: "Jarvis Assistant",
     lead: "A local-first personal AI assistant designed as a calm, always-available operating layer. It combines private language models, a custom voice pipeline, tool connections and automations into one evolving system.",
@@ -42,7 +41,6 @@ const projectData = {
     color: "#d7ff43",
   },
   cod: {
-    index: "Project / 02",
     type: "Community / Editorial / Gaming",
     title: "Call of Duty Albania",
     lead: "A home for Albania's Call of Duty community—combining news, player culture, interactive maps and future competitive features in a visual language inspired by the game without becoming a generic fan page.",
@@ -51,7 +49,6 @@ const projectData = {
     color: "#d7ff43",
   },
   luxe: {
-    index: "Project / 03",
     type: "Brand / Web / Booking",
     title: "Luxe Beauty",
     lead: "A minimal, luxurious and responsive website for a Swiss beauty studio. The experience uses soft editorial motion, elegant service storytelling and a clear path into the Fresha booking journey.",
@@ -60,7 +57,6 @@ const projectData = {
     color: "#d7b994",
   },
   arix: {
-    index: "Project / 04",
     type: "Archive / Interaction / Gaming",
     title: "Arix Collection",
     lead: "An interactive personal archive shaped by gaming history, console culture and nostalgia. It experiments with cinematic startup sequences and playful scrolling to turn a collection into an experience.",
@@ -161,7 +157,7 @@ document.querySelectorAll(".contact-page-link, .project-page-link").forEach((lin
     window.name = WINDOW_RETURNING_VALUE;
     const isProjectRoute = link.classList.contains("project-page-link");
     routeTransitionLabel.textContent = isProjectRoute ? "Loading case study" : "Opening channel";
-    routeTransitionCode.textContent = link.dataset.routeCode || (isProjectRoute ? "SELECTED WORK" : "CONTACT / 04");
+    routeTransitionCode.textContent = link.dataset.routeCode || (isProjectRoute ? "SELECTED WORK" : "CONTACT");
     routeTransition.style.setProperty("--route-x", `${event.clientX || window.innerWidth / 2}px`);
     routeTransition.style.setProperty("--route-y", `${event.clientY || window.innerHeight / 2}px`);
     routeTransition.classList.add("is-active");
@@ -346,7 +342,6 @@ document.querySelectorAll("main section[id]:not(#home)").forEach((section) => se
 /* Project card tilt and detail modal */
 const projectModal = document.querySelector("#projectModal");
 const modalClose = document.querySelector("#modalClose");
-const modalIndex = document.querySelector("#modalIndex");
 const modalType = document.querySelector("#modalType");
 const modalTitle = document.querySelector("#modalTitle");
 const modalLead = document.querySelector("#modalLead");
@@ -356,7 +351,6 @@ const modalGraphic = document.querySelector("#modalGraphic");
 function openProject(key) {
   const project = projectData[key];
   if (!project) return;
-  modalIndex.textContent = project.index;
   modalType.textContent = project.type;
   modalTitle.textContent = project.title;
   modalLead.textContent = project.lead;

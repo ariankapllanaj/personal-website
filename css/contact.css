@@ -45,14 +45,6 @@
   aspect-ratio: 1;
 }
 
-.contact-loader__index {
-  position: relative;
-  z-index: 2;
-  font-family: "Space Grotesk Local", monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .22em;
-}
 
 .contact-loader strong {
   position: relative;
@@ -214,19 +206,11 @@
   text-transform: uppercase;
 }
 
-.contact-index i {
-  height: 1px;
-  flex: 1;
-  background: var(--line-light);
-}
 
 .contact-intro .eyebrow {
   color: rgba(255,255,255,.48);
 }
 
-.contact-intro .eyebrow span {
-  background: var(--acid);
-}
 
 .contact-intro h1 {
   margin: 31px 0 0;

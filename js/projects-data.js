@@ -4,8 +4,9 @@ export const projectOrder = [
   "hygenika",
   "amdrix",
   "virtual-accountant",
-  "rolex-gmt-master-ii",
+  "ai-social-media-manager",
   "cognitive-corporate-finance",
+  "ccf-apollo-email-tool",
 ];
 
 export const projects = {
@@ -133,29 +134,47 @@ export const projects = {
     stack: ["HTML", "CSS", "JavaScript", "Responsive UI", "SEO", "Contact workflow"],
   },
 
-  "rolex-gmt-master-ii": {
-    number: "06", title: "Rolex GMT-Master II", shortTitle: "Rolex GMT-Master II",
-    type: "Unofficial concept / Luxury / Interactive web",
-    subtitle: "An unofficial scroll-driven product experience for the two-tone Rolex GMT-Master II, using layered parallax, Three.js scenes and controlled motion to explore its travel function, construction and visual details.",
-    description: "Unofficial interactive Rolex GMT-Master II concept built with HTML, CSS, JavaScript and Three.js, combining cinematic transitions, parallax depth and responsive product storytelling in a dark green and gold visual system.",
-    image: "assets/projects/rolex-gmt-master2.png", alt: "Rolex GMT-Master II website preview",
-    liveUrl: "https://ariankapllanaj.github.io/rolex-gmt-master2-2tone-gold-website/",
-    accent: "#d6b35f", accentSecondary: "#263d31",
-    year: "2026", client: "Personal concept", market: "Global",
-    role: "Creative direction & development", status: "Live",
-    overviewTitle: "Luxury storytelling through interaction and restraint.",
-    overviewBody: "This personal concept treats the two-tone GMT-Master II as the subject of an interactive luxury campaign rather than a standard product catalogue. Scroll-controlled scenes, layered parallax and Three.js depth guide visitors through the watch's travel identity, construction and precision details, while deep green, black and gold art direction preserves the restrained character expected from a high-end timepiece presentation.",
-    challengeTitle: "The challenge",
-    challengeBody: "The watch contains many small details, while the experience needed to remain elegant rather than becoming a technical catalogue. Motion had to reveal information without competing with the product.",
-    solutionTitle: "The experience",
-    solutionBody: "Scroll-led scenes, layered depth and carefully timed typography build a guided narrative around travel, construction and precision.",
+  "ai-social-media-manager": {
+    number: "06", title: "Hermes — AI Social Media Manager", displayTitle: "Hermes", shortTitle: "Hermes / AI Social Media",
+    kind: "ai-tool",
+    type: "AI Social Media Manager / GPT / MCP",
+    subtitle: "A GPT-powered social media assistant that researches Formula 1 news, creates posts for Facebook and Instagram, and waits for approval before publishing.",
+    description: "Hermes AI Social Media Manager uses a GPT brain and MCP connections to Facebook and Instagram, checks F1 news every 30–60 minutes, researches and creates posts, then waits for human approval.",
+    accent: "#d7ff43", accentSecondary: "#35431c",
+    facts: [["AI brain", "GPT"], ["Connections", "MCP / Facebook & Instagram"], ["News checks", "Every 30–60 minutes"], ["Publishing", "Human approval required"]],
+    overviewTitle: "From F1 news to a post ready for approval.",
+    overviewBody: "Hermes handles the research and creation behind a Formula 1 social media presence. Its GPT brain works with MCP connections to access Facebook and Instagram accounts, checks for F1 news every 30–60 minutes and turns research into prepared posts. It presents the finished work and waits for the account owner's approval before publishing.",
+    challengeTitle: "The challenge", challengeHeading: "The news keeps moving.",
+    challengeBody: "Following Formula 1 means keeping up with a steady stream of news, researching the stories and turning them into social posts. That recurring work takes time, while the final editorial decision still needs a person.",
+    solutionTitle: "The approach", solutionHeading: "Research, create, then ask.",
+    solutionBody: "Hermes brings recurring news checks, GPT research and post creation into one workflow. MCP connects the assistant to Facebook and Instagram. The finished post is presented for review, with approval acting as the gate between preparation and publication.",
     features: [
-      ["01", "Cinematic pacing", "Content appears through controlled scroll sequences."],
-      ["02", "Luxury art direction", "Deep green, black and gold create a premium system."],
-      ["03", "Product storytelling", "Design details join one continuous narrative."],
-      ["04", "Responsive motion", "Effects scale down to preserve clarity and performance."],
+      ["01", "Recurring F1 research", "Check for Formula 1 news every 30–60 minutes."],
+      ["02", "GPT brain", "Research the stories and create posts from the findings."],
+      ["03", "MCP connections", "Access connected Facebook and Instagram accounts."],
+      ["04", "Approval before publishing", "Show the final work and wait for the account owner's decision."],
     ],
-    stack: ["HTML", "CSS", "JavaScript", "Three.js", "Motion", "Responsive UI"],
+    stack: ["Hermes", "GPT", "MCP", "Facebook", "Instagram", "Human approval"],
+    workflow: {
+      title: "How the content flows.",
+      intro: "MCP connects the accounts. Recurring F1 news checks feed the GPT brain, which researches and prepares posts for a human decision.",
+      note: "Approval is the gate: Hermes shows the final work and waits for your decision before publishing. News checks repeat every 30–60 minutes.",
+      summary: [["Input", "F1 news / every 30–60 min"], ["GPT brain", "Research & create"], ["Approval → output", "Facebook & Instagram"]],
+      stages: [
+        { label: "Input", title: "Connect & monitor", steps: [
+          ["MCP account access", "Connect Hermes to the owner's Facebook and Instagram accounts through MCP."],
+          ["Recurring news checks", "Check for Formula 1 news every 30–60 minutes."],
+        ] },
+        { label: "GPT brain", title: "Research & create", steps: [
+          ["Research the story", "Use GPT to research the news and gather context for the post."],
+          ["Prepare the final post", "Create the post and present the finished work for review."],
+        ] },
+        { label: "Approval & output", title: "Approve & publish", approval: true, steps: [
+          ["Wait for approval", "Pause for the account owner's decision on the finished post."],
+          ["Publish approved work", "Use the MCP-connected Facebook and Instagram accounts after approval."],
+        ] },
+      ],
+    },
   },
 
   "cognitive-corporate-finance": {
@@ -180,5 +199,49 @@ export const projects = {
       ["04", "Responsive access", "Key content and contact pathways work across devices."],
     ],
     stack: ["WordPress", "CSS", "JavaScript", "Responsive UI", "Corporate content", "SEO", "Elementor"],
+  },
+
+  "ccf-apollo-email-tool": {
+    number: "08", title: "Cognitive Corporate Finance Apollo Email Scraping Tool",
+    displayTitle: "Apollo Email Scraping Tool", shortTitle: "CCF Apollo Email Tool",
+    kind: "ai-tool",
+    type: "AI tool / Cognitive Corporate Finance",
+    subtitle: "An AI-assisted prospect research tool for Cognitive Corporate Finance, designed to organise Apollo contact data into a relevant, reviewable email list.",
+    description: "Cognitive Corporate Finance Apollo Email Scraping Tool: a project overview and illustrative workflow covering targeting, contact collection, AI-assisted relevance checks and a reviewed email list.",
+    accent: "#8cd7ff", accentSecondary: "#173c50",
+    facts: [["Project for", "Cognitive Corporate Finance"], ["Focus", "Prospect research"], ["Format", "AI tool"], ["Presentation", "Workflow overview"]],
+    overviewTitle: "From a search brief to a useful contact list.",
+    overviewBody: "The platform explains how Cognitive Corporate Finance combines corporate finance-advisory experience, technology and Big Data to support capital raising transactions. A direct positioning statement leads into structured areas for services, network, ecosystem, resources, funding support, team and contact, helping companies and investors understand both the firm's capabilities and its differentiated international approach.",
+    challengeTitle: "The challenge", challengeHeading: "A contact is only useful with context.",
+    challengeBody: "Prospect research involves more than collecting email addresses. The team needs to understand which companies and roles fit a search brief, identify repeated or incomplete records and preserve enough context to review each result.",
+    solutionTitle: "The approach", solutionHeading: "Turn search results into structured research.",
+    solutionBody: "The workflow begins with a target profile, collects available Apollo contact details and uses AI to help assess relevance. Records are then organised for review and export, keeping contact research and outreach as separate steps.",
+    features: [
+      ["01", "Defined targeting", "Use company, location and role criteria to focus the research."],
+      ["02", "Contact collection", "Bring available names, companies, roles and business emails into a structured list."],
+      ["03", "Relevance review", "Use AI-assisted notes to help assess each contact against the brief."],
+      ["04", "List preparation", "Remove duplicates and flag missing information before review and export."],
+    ],
+    stack: ["Apollo", "Targeting criteria", "AI-assisted research", "Deduplication", "Contact export"],
+    workflow: {
+      title: "How the research flows.",
+      intro: "Targeting criteria guide the search. Contact data is assessed and organised, then handed over as a list for review.",
+      note: "Illustrative workflow. The steps shown describe the intended flow; specific integrations and implementation details are not documented here.",
+      summary: [["Input", "Target profile"], ["AI processing", "Collect & assess"], ["Output", "Reviewed contact list"]],
+      stages: [
+        { label: "Input", title: "Define the search", steps: [
+          ["Target profile", "Specify the relevant companies, sectors, locations and decision-making roles."],
+          ["Apollo research", "Use those criteria to identify candidate companies and contacts in Apollo."],
+        ] },
+        { label: "AI processing", title: "Collect & assess", steps: [
+          ["Contact details", "Collect the available business email, name, role and company context."],
+          ["AI relevance check", "Compare the available context with the brief and prepare notes for review."],
+        ] },
+        { label: "Output", title: "Prepare the list", steps: [
+          ["Clean the records", "Remove duplicates and flag incomplete entries or missing email addresses."],
+          ["Review & export", "Review the shortlist and export the selected contacts for the team's next step."],
+        ] },
+      ],
+    },
   },
 };

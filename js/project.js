@@ -3,8 +3,9 @@ import { projectOrder, projects } from "./projects-data.js";
 
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const requested = new URLSearchParams(location.search).get("project");
-const slug = projects[requested] ? requested : projectOrder[0];
+const slug = projectOrder.includes(requested) ? requested : projectOrder[0];
 const project = projects[slug];
+const isTool = project.kind === "ai-tool";
 const nextSlug = projectOrder[(projectOrder.indexOf(slug) + 1) % projectOrder.length];
 const nextProject = projects[nextSlug];
 const id = (value) => document.getElementById(value);
@@ -16,32 +17,104 @@ document.title = `${project.title} — Arian Kapllanaj`;
 id("projectMetaDescription").content = project.description;
 
 [
-  ["projectType", project.type], ["projectIndex", `PROJECT / ${project.number}`],
-  ["projectTitle", project.title], ["projectSubtitle", project.subtitle],
-  ["projectVisualNumber", project.number], ["projectClient", project.client],
+  ["projectType", project.type],
+  ["projectTitle", project.displayTitle || project.title], ["projectSubtitle", project.subtitle],
+  ["projectClient", project.client],
   ["projectRole", project.role], ["projectMarket", project.market],
   ["projectYear", project.year], ["projectStatus", project.status],
   ["overviewTitle", project.overviewTitle], ["overviewBody", project.overviewBody],
   ["challengeTitle", project.challengeTitle], ["challengeBody", project.challengeBody],
   ["solutionTitle", project.solutionTitle], ["solutionBody", project.solutionBody],
-  ["nextProjectNumber", nextProject.number], ["nextProjectTitle", nextProject.shortTitle],
+  ["nextProjectTitle", nextProject.shortTitle],
   ["projectFooterTitle", project.shortTitle],
-].forEach(([target, value]) => setText(target, value));
+].forEach(([target, value]) => { if (value != null) setText(target, value); });
+
+const element = (tag, className, text) => {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text != null) node.textContent = text;
+  return node;
+};
+
+document.body.classList.toggle("project--tool", isTool);
+if (project.challengeHeading) setText("challengeHeading", project.challengeHeading);
+if (project.solutionHeading) setText("solutionHeading", project.solutionHeading);
+
+if (project.facts) {
+  id("projectFacts").replaceChildren(...project.facts.map(([label, value]) => {
+    const fact = element("div");
+    fact.append(element("span", "", label), element("strong", "", value));
+    return fact;
+  }));
+}
 
 const projectImage = id("projectImage");
-projectImage.src = project.image;
-projectImage.alt = project.alt;
+if (project.image) {
+  projectImage.src = project.image;
+  projectImage.alt = project.alt;
+  id("projectImageFrame").hidden = false;
+}
+setText("visualCaption", isTool ? "AI tool / Workflow" : `Live capture / ${project.year}`);
+setText("visualStatus", isTool ? "System overview" : "Project online");
 [id("headerLiveLink"), id("heroLiveLink")].forEach((link) => {
-  link.href = project.liveUrl;
-  link.setAttribute("aria-label", `Open the live ${project.title} website in a new tab`);
+  if (isTool) {
+    link.href = "#workflow";
+    link.removeAttribute("target");
+    link.removeAttribute("rel");
+    if (link.id === "heroLiveLink") {
+      link.querySelector("span").textContent = "See how it works";
+      link.querySelector("path").setAttribute("d", "M12 5v14M6 13l6 6 6-6");
+    } else link.textContent = "View workflow ↓";
+    link.setAttribute("aria-label", `Explore the ${project.title} workflow`);
+  } else if (project.liveUrl) {
+    link.href = project.liveUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", `Open the live ${project.title} website in a new tab`);
+  }
+  link.hidden = !isTool && !project.liveUrl;
 });
+
+if (isTool && project.workflow) {
+  const workflow = project.workflow;
+  id("projectToolSummary").hidden = false;
+  id("workflow").hidden = false;
+  setText("workflowTitle", workflow.title);
+  setText("workflowIntro", workflow.intro);
+  setText("workflowNote", workflow.note);
+  setText("processIndex", "Approach");
+  setText("highlightsIndex", "Highlights");
+  setText("stackLabel", "Workflow components");
+
+  id("projectToolFlow").replaceChildren(...workflow.summary.map(([label, title]) => {
+    const step = element("li", "tool-summary__step");
+    step.append(element("span", "", label), element("strong", "", title));
+    return step;
+  }));
+
+  id("workflowStages").replaceChildren(...workflow.stages.map((stage) => {
+    const panel = element("li", `workflow-stage reveal${stage.approval ? " workflow-stage--approval" : ""}`);
+    const label = element("p", "workflow-stage__label", stage.label);
+    panel.append(label, element("h3", "", stage.title));
+    const steps = element("ol", "workflow-steps");
+    stage.steps.forEach(([title, description]) => {
+      const step = element("li", "workflow-step");
+      const content = element("div");
+      content.append(element("h4", "", title), element("p", "", description));
+      step.append(content);
+      steps.append(step);
+    });
+    panel.append(steps);
+    return panel;
+  }));
+}
 
 const nextLink = id("nextProjectLink");
 nextLink.href = `project.html?project=${nextSlug}`;
-nextLink.dataset.routeCode = `PROJECT / ${nextProject.number}`;
+nextLink.dataset.routeCode = "PROJECT";
 
-id("projectFeatures").innerHTML = project.features.map(([number, title, body]) => `
-  <article class="feature reveal"><span>${number}</span><h3>${title}</h3><p>${body}</p><i aria-hidden="true">↗</i></article>
+id("projectFeatures").innerHTML = project.features.map(([, title, body]) => `
+  <article class="feature reveal"><h3>${title}</h3><p>${body}</p><i aria-hidden="true">↗</i></article>
 `).join("");
 id("projectStack").innerHTML = project.stack.map((item) => `<span>${item}</span>`).join("");
 
@@ -49,7 +122,7 @@ function finishLoading() {
   document.body.classList.add("is-ready");
   document.body.classList.remove("is-loading");
 }
-if (projectImage.complete) setTimeout(finishLoading, reduceMotion ? 0 : 420);
+if (!project.image || projectImage.complete) setTimeout(finishLoading, reduceMotion ? 0 : 420);
 else {
   projectImage.addEventListener("load", () => setTimeout(finishLoading, reduceMotion ? 0 : 420), { once: true });
   projectImage.addEventListener("error", finishLoading, { once: true });
@@ -111,7 +184,7 @@ document.querySelectorAll(".internal-link").forEach((link) => link.addEventListe
   try { sessionStorage.setItem("akSkipIntroOnce", "true"); } catch { /* navigation still works */ }
   window.name = "akPortfolio:returning";
   setText("projectRouteLabel", link.dataset.routeLabel || "Opening project");
-  setText("projectRouteCode", link.dataset.routeCode || "SELECTED WORK / 02");
+  setText("projectRouteCode", link.dataset.routeCode || "SELECTED WORK");
   route.style.setProperty("--route-x", `${event.clientX || innerWidth / 2}px`);
   route.style.setProperty("--route-y", `${event.clientY || innerHeight / 2}px`);
   route.classList.add("is-active");
