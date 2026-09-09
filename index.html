@@ -207,7 +207,7 @@
               <p>Years across development<br>and engineering</p>
             </article>
             <article class="stat reveal" data-reveal="up">
-              <strong><span data-count="7">0</span></strong>
+              <strong><span data-count="8">0</span></strong>
               <p>Core worlds<br>Software / AI / Web</p>
             </article>
             <article class="stat reveal" data-reveal="up">
@@ -230,7 +230,15 @@
               curiosity and a refusal to leave good ideas unfinished.</p>
           </div>
 
-          <div class="project-grid">
+          <div class="project-filters" role="group" aria-label="Filter projects by category">
+            <button class="project-filter" type="button" data-project-filter="all" aria-pressed="true" aria-controls="projectGrid">All</button>
+            <button class="project-filter" type="button" data-project-filter="ai" aria-pressed="false" aria-controls="projectGrid">AI Projects</button>
+            <button class="project-filter" type="button" data-project-filter="website" aria-pressed="false" aria-controls="projectGrid">Websites</button>
+            <button class="project-filter" type="button" data-project-filter="mobile" aria-pressed="false" aria-controls="projectGrid">Mobile Apps</button>
+          </div>
+          <p class="project-filter-status" id="projectFilterStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+
+          <div class="project-grid" id="projectGrid">
             <!-- <button class="project-card project-card--wide reveal" data-reveal="up" type="button" data-project="jarvis"
               data-cursor="view">
 
@@ -276,7 +284,7 @@
               </div>
             </button> -->
 
-            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card reveal" data-category="website" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--luxe project-visual--external project-visual--luxe-studio"
                 aria-hidden="true">
@@ -299,7 +307,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card reveal" data-category="website" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--luxe project-visual--external project-visual--luxe-studio"
                 aria-hidden="true">
@@ -341,7 +349,7 @@
               </div>
             </button> -->
 
-            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card reveal" data-category="website" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--external project-visual--hygenika" aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/hygenika.png" alt="Hygenika.ch microsite preview">
@@ -361,7 +369,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card reveal" data-category="website" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--external project-visual--amdrix" aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/amdrix.png" alt="Amdrix microsite preview">
@@ -382,7 +390,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card reveal" data-category="website" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--external project-visual--virtual-accountant"
                 aria-hidden="true">
@@ -404,7 +412,7 @@
               </div>
             </article>
 
-            <article class="project-card project-card--tool reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card project-card--tool reveal" data-category="ai" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--tool" aria-hidden="true">
                 <div class="tool-preview">
@@ -431,7 +439,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card reveal" data-category="website" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--external project-visual--cognitive" aria-hidden="true">
                 <img class="project-screenshot" src="assets/projects/ccf.png" alt="Cognitive Corporate Finance">
@@ -451,7 +459,7 @@
               </div>
             </article>
 
-            <article class="project-card project-card--tool project-card--apollo reveal" data-reveal="up" data-cursor="view">
+            <article class="project-card project-card--tool project-card--apollo reveal" data-category="ai" data-reveal="up" data-cursor="view">
 
               <div class="project-visual project-visual--tool" aria-hidden="true">
                 <div class="tool-preview">
@@ -477,6 +485,10 @@
                   href="project.html?project=ccf-apollo-email-tool" data-route-code="PROJECT"><span>View workflow</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
               </div>
             </article>
+          </div>
+          <div class="project-empty" id="projectEmpty" hidden>
+            <h3>No mobile apps to show yet.</h3>
+            <p>Explore the AI projects and websites using the filters above.</p>
           </div>
         </div>
       </section>

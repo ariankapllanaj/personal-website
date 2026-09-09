@@ -339,6 +339,39 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll("main section[id]:not(#home)").forEach((section) => sectionObserver.observe(section));
 
+/* Project categories */
+const projectFilters = document.querySelectorAll("[data-project-filter]");
+const filterableProjects = document.querySelectorAll("#projectGrid > [data-category]");
+const projectEmpty = document.querySelector("#projectEmpty");
+const projectFilterStatus = document.querySelector("#projectFilterStatus");
+
+projectFilters.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.getAttribute("aria-pressed") === "true") return;
+    const category = button.dataset.projectFilter;
+    let visibleCount = 0;
+
+    projectFilters.forEach((filter) => {
+      filter.setAttribute("aria-pressed", String(filter === button));
+    });
+
+    filterableProjects.forEach((card) => {
+      const visible = category === "all" || card.dataset.category === category;
+      card.hidden = !visible;
+      if (visible) {
+        visibleCount += 1;
+        card.classList.add("is-visible");
+        revealObserver.unobserve(card);
+      }
+    });
+
+    projectEmpty.hidden = visibleCount > 0;
+    projectFilterStatus.textContent = visibleCount
+      ? `Showing ${button.textContent.trim().toLowerCase()}: ${visibleCount} ${visibleCount === 1 ? "project" : "projects"}.`
+      : "No mobile apps to show yet.";
+  });
+});
+
 /* Project card tilt and detail modal */
 const projectModal = document.querySelector("#projectModal");
 const modalClose = document.querySelector("#modalClose");

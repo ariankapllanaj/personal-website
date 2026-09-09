@@ -1399,6 +1399,36 @@ body.site-ready .title-line:nth-child(2) > span { transition-delay: .12s; }
   line-height: 1.8;
 }
 
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: clamp(30px, 4vw, 56px);
+}
+
+.project-filter {
+  min-height: 46px;
+  padding: 12px 22px;
+  border: 1px solid var(--line-light);
+  border-radius: 999px;
+  color: rgba(255,255,255,.75);
+  background: transparent;
+  font-family: "Space Grotesk Local", sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: color .2s, border-color .2s, background-color .2s;
+}
+
+.project-filter:hover { color: var(--white); border-color: var(--white); }
+.project-filter[aria-pressed="true"] { color: var(--ink); border-color: var(--acid); background: var(--acid); }
+.project-filter:focus-visible { outline: 2px solid var(--acid); outline-offset: 4px; }
+.project-card[hidden], .project-empty[hidden] { display: none !important; }
+.project-filter-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.project-empty { padding: clamp(48px, 7vw, 90px) 24px; text-align: center; background: var(--ink-soft); }
+.project-empty h3 { margin: 0; font-family: "Space Grotesk Local", sans-serif; font-size: clamp(26px, 3vw, 42px); font-weight: 450; letter-spacing: -.035em; }
+.project-empty p { margin: 16px 0 0; color: rgba(255,255,255,.6); font-size: 16px; line-height: 1.7; }
+
 .project-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1418,7 +1448,6 @@ body.site-ready .title-line:nth-child(2) > span { transition-delay: .12s; }
   transition: opacity .85s var(--ease-out), transform .45s var(--ease-out);
 }
 
-.project-card:nth-child(even) { margin-top: 11vw; }
 .project-card--wide { grid-column: auto; }
 
 
@@ -2316,7 +2345,8 @@ body.site-ready .title-line:nth-child(2) > span { transition-delay: .12s; }
   .section-heading-row { display: block; padding: 60px 0 65px; }
   .section-heading-row > p { margin-top: 30px; }
   .project-grid { grid-template-columns: 1fr; gap: 55px; }
-  .project-card:nth-child(even) { margin-top: 0; }
+  .project-filters { display: grid; grid-template-columns: 1fr 1fr; }
+  .project-filter { padding-inline: 12px; }
   .project-visual { height: 112vw; max-height: 570px; }
   .project-card__meta { padding-top: 17px; }
   .project-card__actions { padding-top: 17px; }
