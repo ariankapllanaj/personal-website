@@ -1548,6 +1548,7 @@ body.site-ready .title-line:nth-child(2) > span { transition-delay: .12s; }
 
 .project-card--tool { --tool-accent: #d7ff43; }
 .project-card--apollo { --tool-accent: #8cd7ff; }
+.project-card--investor { --tool-accent: #c5a6ff; }
 .project-card__actions--single { grid-template-columns: 1fr; }
 .project-card--tool .project-action--details { color: var(--ink); border-color: var(--tool-accent); background: var(--tool-accent); }
 .project-card--tool .project-action--details:hover { background: var(--white); border-color: var(--white); }

@@ -6,6 +6,7 @@ export const projectOrder = [
   "ai-social-media-manager",
   "cognitive-corporate-finance",
   "ccf-apollo-email-tool",
+  "ai-investor-sourcing-system",
 ];
 
 export const projects = {
@@ -211,6 +212,62 @@ export const projects = {
         { label: "Output", title: "Export the Excel file", steps: [
           ["New spreadsheet", "Generate a new Excel document containing the email addresses."],
           ["Use for outreach", "Share the list for next-step communication and sales follow-up."],
+        ] },
+      ],
+    },
+  },
+
+  "ai-investor-sourcing-system": {
+    number: "09", title: "AI-Powered Investor Sourcing System",
+    displayTitle: "AI Investor Sourcing", shortTitle: "AI Investor Sourcing",
+    kind: "ai-tool",
+    type: "AI workflow / Investor research / Data enrichment",
+    subtitle: "An AI-assisted workflow concept for Cognitive Corporate Finance that turns Get Funded form data into a reviewed investor longlist with relevant investment-team contacts and a ready-to-use CCF Excel file.",
+    description: "A risk-aware investor-sourcing system concept that structures a funding mandate, uses Claude for public-web investor research, enriches selected investment-team contacts through Apollo and generates the established CCF Excel output for analyst approval.",
+    accent: "#c5a6ff", accentSecondary: "#392957",
+    year: "2026", client: "Cognitive Corporate Finance", market: "Corporate finance / International",
+    role: "AI workflow & solution architecture", status: "Concept / MVP design",
+    facts: [
+      ["Project for", "Cognitive Corporate Finance"],
+      ["Input", "Get Funded form / funding mandate"],
+      ["Research", "Claude + public web sources"],
+      ["Output", "Analyst-reviewed CCF Excel"],
+    ],
+    overviewTitle: "From a funding brief to a review-ready investor longlist.",
+    overviewBody: "The proposed system standardises the repetitive work between a client's funding brief and CCF's final investor list. The Get Funded form is validated and translated into clear search criteria; Claude researches potential investors and returns structured firm data; Apollo identifies selected investment-team contacts and available business emails; and deterministic Python/openpyxl logic places approved results into the established CCF workbook. An analyst remains responsible for investor fit, exclusions and final release.",
+    challengeTitle: "The challenge", challengeHeading: "Investor sourcing is repetitive, but quality cannot be automated blindly.",
+    challengeBody: "Investor sourcing combines time-consuming web research, inconsistent public information, contact discovery and precise spreadsheet formatting. A fully autonomous system could return outdated or convincing-but-wrong matches, waste API credits or create privacy and vendor-licensing risks. The workflow therefore needed to reduce manual effort without replacing CCF's judgement.",
+    solutionTitle: "The approach", solutionHeading: "Separate AI judgement from deterministic delivery.",
+    solutionBody: "Claude handles research, classification and fit analysis; Apollo is queried only after an investor firm is selected and only for relevant investment roles; Python and FastAPI validate and coordinate the process; and openpyxl writes results into fixed CCF columns. The recommended rollout begins with a low-cost team-run pilot, then moves to a hosted API model only if quality and volume justify deeper automation.",
+    features: [
+      ["01", "Mandate structuring", "Validate the Get Funded form and convert each brief into consistent investor-search criteria."],
+      ["02", "AI-assisted research", "Use Claude and public web sources to identify candidate investors, analyse fit and return structured firm data."],
+      ["03", "Targeted contact enrichment", "Query Apollo only for selected firms and relevant investment-team roles to control cost and reduce noise."],
+      ["04", "Controlled Excel delivery", "Use deterministic openpyxl logic to preserve the CCF template, with analyst review required before export."],
+    ],
+    stack: ["Get Funded Form", "Python", "FastAPI", "Claude", "Web Research", "Apollo", "openpyxl", "Excel", "Human Review"],
+    workflow: {
+      title: "How the sourcing workflow works.",
+      intro: "A funding brief becomes a structured search mandate, AI-assisted research produces candidate investors, Apollo adds selected investment professionals and CCF approves the final Excel output.",
+      note: "AI accelerates research and classification; it is not the final authority. CCF keeps control over investor fit, exclusions, privacy, vendor usage and client delivery.",
+      summary: [
+        ["Mandate", "Form → search criteria"],
+        ["Research & enrich", "Claude → Apollo contacts"],
+        ["Quality gate", "Review → CCF Excel"],
+      ],
+      stages: [
+        { label: "Input", title: "Define the mandate", steps: [
+          ["Capture the funding brief", "Collect company, raise, sector, geography, stage, investor type and other criteria through the Get Funded form."],
+          ["Create search instructions", "Validate the inputs and translate them into one structured, repeatable investor-search specification."],
+        ] },
+        { label: "AI + data", title: "Research & enrich", steps: [
+          ["Research suitable investors", "Use Claude with current public sources to identify firms that appear to match the mandate and explain the fit."],
+          ["Structure the candidates", "Return consistent fields such as investor name, type, headquarters, website and a concise description."],
+          ["Find relevant professionals", "Use Apollo to identify selected investment-team members and available professional email addresses."],
+        ] },
+        { label: "Review & output", title: "Approve & export", approval: true, steps: [
+          ["Apply the quality gate", "Let a CCF analyst remove weak matches, confirm the shortlist and approve the data for delivery."],
+          ["Generate the CCF workbook", "Insert approved results into the existing Excel template with deterministic Python/openpyxl logic."],
         ] },
       ],
     },
