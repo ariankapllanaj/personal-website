@@ -1,4 +1,5 @@
 export const projectOrder = [
+  "klykgo",
   "luxe-beauty",
   "hygenika",
   "amdrix",
@@ -10,6 +11,29 @@ export const projectOrder = [
 ];
 
 export const projects = {
+  "klykgo": {
+    number: "01", title: "Klykgo.ch", shortTitle: "Klykgo",
+    type: "Website / Marketing / Branding",
+    subtitle: "A Swiss marketing agency website bringing marketing, branding, web design and development together in one strong brand presence.",
+    description: "Website for Klykgo, presenting its marketing, branding, web design and development services through a bold, high-contrast visual identity.",
+    image: "assets/projects/klykgo.png", alt: "Klykgo.ch website hero preview",
+    liveUrl: "https://klykgo.ch", accent: "#f4f4f4", accentSecondary: "#202024",
+    year: "2026", client: "Klykgo", market: "Switzerland",
+    role: "Web design & development", status: "Live",
+    overviewTitle: "One brand presence for a broad creative offer.",
+    overviewBody: "Klykgo brings marketing, branding, photography, web design and development, signage and content together under one agency identity. The dark, minimal hero uses oversized typography, concentric geometry and floating service labels to introduce the offer, with a clear project enquiry action at its centre.",
+    challengeTitle: "The challenge",
+    challengeBody: "Presenting a range of connected services calls for a clear visual hierarchy that helps visitors quickly understand the agency's offer.",
+    solutionTitle: "The approach",
+    solutionBody: "A restrained black-and-white palette, large type and service markers give the brand a confident digital introduction and make the next step easy to find.",
+    features: [
+      ["01", "Distinctive hero", "Oversized typography makes the agency's central message immediate."],
+      ["02", "Service overview", "Floating labels surface the agency's main capabilities."],
+      ["03", "Focused enquiry", "A prominent project call to action invites visitors to get in touch."],
+      ["04", "Brand consistency", "A restrained visual system keeps the agency identity cohesive."],
+    ],
+    stack: ["Next.js 15", "React 19", "TypeScript", "Custom CSS", "GSAP", "Supabase"],
+  },
   "luxe-beauty": {
     number: "02", title: "Luxe Beauty Studio", shortTitle: "Luxe Beauty",
     type: "Client website / Beauty / Booking",

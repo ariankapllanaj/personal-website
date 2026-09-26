@@ -60,6 +60,11 @@ body.modal-open {
   overflow: hidden;
 }
 
+body.is-locked {
+  position: fixed;
+  inset: 0;
+}
+
 ::selection {
   color: var(--ink);
   background: var(--acid);
